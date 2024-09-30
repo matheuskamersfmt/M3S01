@@ -1,11 +1,14 @@
+import Timer from '../components/Timer.jsx';
+
 const Home = () => {
     return (
         <div>
-            <h1>Página Inicial</h1>
-            <p>Bem-vindo à nossa aplicação!</p>
-            <button onClick={() => alert('Você clicou no botão!')}>Clique aqui</button>
+           <div>
+                <h1>Página Inicial</h1>
+                <Timer />
+            </div>
         </div>
     );
-  };
-  
-  export default Home;
+};
+
+export default Home;
