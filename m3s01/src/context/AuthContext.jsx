@@ -1,20 +1,19 @@
 import { createContext, useState } from 'react';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = (userData) => {
     setUser(userData);
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
     setUser(null);
-  };
-
-  const isAuthenticated = () => {
-    return user !== null;
+    setIsAuthenticated(false);
   };
 
   const validateToken = () => {
@@ -31,4 +30,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export default AuthContext;
+export default AuthContextProvider;
